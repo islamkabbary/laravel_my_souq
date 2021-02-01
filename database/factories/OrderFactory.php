@@ -3,6 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Order;
+use App\Models\PaymentMethod;
+use App\Models\ShopingCompany;
+use App\Models\User;
+use App\Models\UserContact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory
@@ -26,10 +30,10 @@ class OrderFactory extends Factory
             "estimated_delivery_date"=>$this->faker->time(),
             "status"=>$this->faker->
             randomElement(['Pendding', 'Accepted', 'Rejected', 'Shipped', 'Deliverd', 'Refund']),
-            // "user_id"=>User::inRandomeOrder()->first()->id,
-            //  "payment_method_id"=>Payment_Method::inRandomOrder()->first()->id,
-            //  "shoping_company_id"=>Shoping_Company::inRandomOrder()->first()->id,
-            //  "shipped_address_id"=>User_Contact::inRandomOrder()->first()->id,
+            "user_id"=>User::inRandomeOrder()->first()->id,
+             "payment_method_id"=>PaymentMethod::inRandomOrder()->first()->id,
+             "shoping_company_id"=>ShopingCompany::inRandomOrder()->first()->id,
+             "shipped_address_id"=>UserContact::inRandomOrder()->first()->id,
         ];
     }
 }

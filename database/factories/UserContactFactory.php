@@ -26,7 +26,7 @@ class UserContactFactory extends Factory
             "type"=>$this->faker->
             randomElement(['Address', 'Mobile', 'Phone', 'fax', 'postal', 'code']),
             "contact"=>$this->faker->sentence(),
-            //"user_id"=>User::inRandomOrder()->first()->id,
+            "user_id"=>User::inRandomOrder()->first()->id,
         ];
     }
 }

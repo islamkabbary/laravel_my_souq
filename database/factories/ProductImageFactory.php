@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,7 +24,7 @@ class ProductImageFactory extends Factory
     {
         return [
             "image"=>$this->faker->sentence(),
-            //"product_id"=>Product::inRandomOrder()->first()->id,
+            "product_id"=>Product::inRandomOrder()->first()->id,
         ];
     }
 }

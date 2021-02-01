@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderProductFactory extends Factory
@@ -24,8 +26,8 @@ class OrderProductFactory extends Factory
         return [
             "unit_price"=>$this->faker->randomDigit(),
             "review"=>$this->faker->randomNumber(),
-            // "product_id"=>Product::inRandomOrder()->first()->id,
-            // "order_id"=>Order::inRandomOrder()->first()->id,
+            "product_id"=>Product::inRandomOrder()->first()->id,
+            "order_id"=>Order::inRandomOrder()->first()->id,
         ];
     }
 }
